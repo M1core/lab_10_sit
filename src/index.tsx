@@ -16,7 +16,7 @@ const cache = new InMemoryCache();
 const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
   cache,
   link: new HttpLink({
-    uri: 'https://lab-8-sit.herokuapp.com/graphql',
+    uri: 'https://lab-8-sit.herokuapp.com',
     headers: {
       authorization: localStorage.getItem('token'),
       'client-name': 'Space Explorer [web]',
@@ -33,8 +33,6 @@ cache.writeData({
     cartItems: [],
   },
 });
-
-console.log("server started at: ", process.env.PORT)
 
 const IS_LOGGED_IN = gql`
   query IsUserLoggedIn {
