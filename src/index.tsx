@@ -34,6 +34,8 @@ cache.writeData({
   },
 });
 
+console.log("server started at: ", process.env.PORT)
+
 const IS_LOGGED_IN = gql`
   query IsUserLoggedIn {
     isLoggedIn @client
